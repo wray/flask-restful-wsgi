@@ -21,7 +21,7 @@ Then, I setup standard app directories for apache conf and the app itself:
   * Set your listen port [optional]
   * Add this line to include your app configurations: `Include /etc/httpd/conf/apps/*.conf`
 * Take the spam.conf from this project and place in /etc/httpd/conf/apps/
-* Edit spam.conf to match your port and servername (lines 1 and 4)
+* Edit spam.conf to match your port and servername (lines 1 and 3)
 * Export this repo into a spam directory in /var/www/apps, so now you'll have the app ready like:
   * /var/www/apps/spam
     * /spam-fe/*.html
