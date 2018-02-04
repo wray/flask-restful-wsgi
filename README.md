@@ -10,11 +10,18 @@ I started with a Red Hat 7 instance (on AWS EC2) and did the following setup:
 * `sudo pip install flask flask_restful`
 * `sudo yum install httpd`
 * `sudo yum install mod_wsgi`
-Note, if you don't have the ability to install pip or pip packages, I'm creating a separate branch for that config.
 
 Then, I setup standard app directories for apache conf and the app itself:
 * /var/www/apps
 * /etc/httpd/conf/apps
+
+## Pre-reqs without python (pip install) system privileges
+Create a virtualenv where you can install python directories, put that in your deployment folder:
+* `cd /var/www/apps/spam`
+* `virtualenv spam-venv`
+* `source spam-venv/bin/activate`
+* `pip install flask flask_restful`
+* In your apache conf, point to the spam-api-venv.wsgi file
 
 ## Configure
 * Adjust httpd.conf
@@ -22,6 +29,7 @@ Then, I setup standard app directories for apache conf and the app itself:
   * Add this line to include your app configurations: `Include /etc/httpd/conf/apps/*.conf`
 * Take the spam.conf from this project and place in /etc/httpd/conf/apps/
 * Edit spam.conf to match your port and servername (lines 1 and 3)
+* Edit spam.conf to use a virtualenv if necessary (comment line 14, uncomment line 17)
 * Export this repo into a spam directory in /var/www/apps, so now you'll have the app ready like:
   * /var/www/apps/spam
     * /spam-fe/*.html
