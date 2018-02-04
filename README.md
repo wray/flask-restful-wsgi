@@ -15,7 +15,7 @@ Then, I setup standard app directories for apache conf and the app itself:
 * /var/www/apps
 * /etc/httpd/conf/apps
 
-## Pre-reqs without python (pip install) system privileges
+## [Pre-reqs] *if you don't have python system privileges*
 Create a virtualenv where you can install python directories, put that in your deployment folder:
 * `cd /var/www/apps/spam`
 * `virtualenv spam-venv`
