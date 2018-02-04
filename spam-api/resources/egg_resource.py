@@ -13,5 +13,5 @@ class EggResource(Resource):
     def get(self):
         e = Egg()
         e.type = 'Chicken'
-	      e.cook = 'Scrambled'
+        e.cook = 'Scrambled'
         return marshal(e,resources)
