@@ -14,4 +14,5 @@ Not really, assume you have an AWS account and just do this:
 
 ## Deploy
 * `zappa deploy`
+
 The deploy will do a number of things, ultimately uploading a lambda function and then deploying an AWS API Gateway to trigger that lambda. So, at the very end it will return a url like: [https://f3nowuh5sj.execute-api.us-east-1.amazonaws.com/dev](https://f3nowuh5sj.execute-api.us-east-1.amazonaws.com/dev). You can just add /api/egg to the end to hit the endpoint, like [https://f3nowuh5sj.execute-api.us-east-1.amazonaws.com/dev/api/egg](https://f3nowuh5sj.execute-api.us-east-1.amazonaws.com/dev/api/egg).
